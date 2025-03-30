@@ -26,7 +26,7 @@ This is a **Grocery Booking API** built using **TypeScript with Node.js** and **
 
 ## ⚙️ Project Setup
 ### **📌 Prerequisites**
-- Install **Node.js** (>=16.x)
+- Install **Node.js** (>=18.x)
 - Install **Docker** (if using containerized setup)
 - Install **MySQL** (if running outside Docker)
 
