@@ -1,123 +1,114 @@
-Grocery Booking API
+# 🛒 Grocery Booking API
 
-Project Overview
+## 📌 Project Overview
+This is a **Grocery Booking API** built using **TypeScript with Node.js** and **MySQL**. The system allows users to view grocery items and place orders, while administrators manage grocery items and inventory.
 
-This is a Grocery Booking API built using TypeScript with Node.js and MySQL. The system allows users to view grocery items and place orders, while administrators manage grocery items and inventory.
+---
 
-Features
+## 🚀 Features
+### **👤 User Role**
+✅ View available grocery items.  
+✅ Place an order with multiple items.  
 
-User Role
+### **🔧 Admin Role**
+✅ Add new grocery items.  
+✅ View and manage inventory.  
+✅ Update or delete items.  
 
-View available grocery items.
+---
 
-Place an order with multiple items.
+## 🛠️ Technologies Used
+- **Backend**: Node.js (TypeScript, Express.js)
+- **Database**: MySQL
+- **Containerization**: Docker
 
-Admin Role
+---
 
-Add new grocery items.
+## ⚙️ Project Setup
+### **📌 Prerequisites**
+- Install **Node.js** (>=16.x)
+- Install **Docker** (if using containerized setup)
+- Install **MySQL** (if running outside Docker)
 
-View and manage inventory.
+### **📥 Clone the Repository**
+```sh
+git clone https://github.com/yourusername/qp-assessment.git
+cd qp-assessment
+```
 
-Update or delete items.
+### **📦 Install Dependencies**
+```sh
+npm install
+```
 
-Technologies Used
+### **📃 Environment Variables (.env)**
+Create a `.env` file in the root directory:
+```env
+PORT=3000
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=grocery_db
+```
 
-Backend: Node.js (TypeScript, Express.js)
+### **🐬 Start MySQL Database**
+If using **Docker**, run:
+```sh
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=grocery_db -p 3306:3306 -d mysql:latest
+```
 
-Database: MySQL
+### **📌 Run Database Migrations**
+```sh
+npm run migrate
+```
 
-Containerization: Docker
+### **▶️ Start the Application**
+```sh
+npm run dev
+```
 
-Project Setup
+---
 
-Prerequisites
+## 📡 API Endpoints
+### **👤 User Routes**
+| Method | Endpoint       | Description  |
+|--------|---------------|--------------|
+| **GET**    | `/items`      | View items   |
+| **POST**   | `/orders`     | Place order  |
 
-Install Node.js (>=16.x)
+### **🔧 Admin Routes**
+| Method | Endpoint         | Description      |
+|--------|-----------------|------------------|
+| **POST**   | `/admin/items`  | Add grocery item |
+| **PUT**    | `/admin/items/:id` | Update item |
+| **DELETE** | `/admin/items/:id` | Delete item |
 
-Install Docker (if using containerized setup)
+---
 
-Install MySQL (if running outside Docker)
+## 📦 Running in Docker
+```sh
+docker-compose up --build
+```
 
-Clone the Repository
+---
 
-Install Dependencies
-
-Environment Variables (.env)
-
-Create a .env file in the root directory:
-
-Start MySQL Database
-
-If using Docker, run:
-
-Run Database Migrations
-
-Start the Application
-
-API Endpoints
-
-User Routes
-
-Method
-
-Endpoint
-
-Description
-
-GET
-
-/items
-
-View items
-
-POST
-
-/orders
-
-Place order
-
-Admin Routes
-
-Method
-
-Endpoint
-
-Description
-
-POST
-
-/admin/items
-
-Add grocery item
-
-PUT
-
-/admin/items/:id
-
-Update item
-
-DELETE
-
-/admin/items/:id
-
-Delete item
-
-Running in Docker
-
-Testing
-
+## 🧪 Testing
 Run unit tests using:
+```sh
+npm run test
+```
 
-Contributing
+---
 
-Fork the repo
+## 🤝 Contributing
+1. **Fork** the repository  
+2. **Create** a feature branch  
+3. **Commit** your changes  
+4. **Push** and open a **Pull Request**  
 
-Create a feature branch
+---
 
-Commit your changes
+## 📜 License
+This project is licensed under the **MIT License**.
 
-Push and open a Pull Request
-
-License
-
-MIT License
