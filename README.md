@@ -32,7 +32,7 @@ This is a **Grocery Booking API** built using **TypeScript with Node.js** and **
 
 ### **📥 Clone the Repository**
 ```sh
-git clone https://github.com/yourusername/qp-assessment.git
+git clone https://github.com/Prashant2149/qp-assessment.git
 cd qp-assessment
 ```
 
