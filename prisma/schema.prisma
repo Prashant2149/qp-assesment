@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  role     String // 'admin' or 'user'
+
+  orders Order[] // 👈 Add this inverse relation for Order model
+}
+
+model GroceryItem {
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Float
+  stock Int
+
+  orderItems OrderItem[] // 👈 Add this inverse relation for OrderItem model
+}
+
+model Order {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  totalAmount Float
+  createdAt   DateTime @default(now())
+
+  user       User        @relation(fields: [userId], references: [id]) // ✅ Fix: Relation to User model
+  orderItems OrderItem[] // ✅ Fix: Relation to OrderItem model
+}
+
+model OrderItem {
+  id        Int @id @default(autoincrement())
+  orderId   Int
+  groceryId Int
+  quantity  Int
+
+  order   Order       @relation(fields: [orderId], references: [id]) // ✅ Fix: Relation to Order model
+  grocery GroceryItem @relation(fields: [groceryId], references: [id]) // ✅ Fix: Relation to GroceryItem model
+}
