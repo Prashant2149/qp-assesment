@@ -1,65 +1,123 @@
-## About
+Grocery Booking API
 
-This project was created with [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
+Project Overview
 
-**IMPORTANT** for demo purposes I had to disable `helmet` in production. In any real world app you should change these 3 lines of code in `src/server.ts`:
-```ts
-// eslint-disable-next-line n/no-process-env
-if (!process.env.DISABLE_HELMET) {
-  app.use(helmet());
-}
-```
+This is a Grocery Booking API built using TypeScript with Node.js and MySQL. The system allows users to view grocery items and place orders, while administrators manage grocery items and inventory.
 
-To just this:
-```ts
-app.use(helmet());
-```
+Features
 
+User Role
 
-## Available Scripts
+View available grocery items.
 
-### `npm run clean-install`
+Place an order with multiple items.
 
-Remove the existing `node_modules/` folder, `package-lock.json`, and reinstall all library modules.
+Admin Role
 
+Add new grocery items.
 
-### `npm run dev` or `npm run dev:hot` (hot reloading)
+View and manage inventory.
 
-Run the server in development mode.<br/>
+Update or delete items.
 
-**IMPORTANT** development mode uses `swc` for performance reasons which DOES NOT check for typescript errors. Run `npm run type-check` to check for type errors. NOTE: you should use your IDE to prevent most type errors.
+Technologies Used
 
+Backend: Node.js (TypeScript, Express.js)
 
-### `npm test` or `npm run test:hot` (hot reloading)
+Database: MySQL
 
-Run all unit-tests.
+Containerization: Docker
 
+Project Setup
 
-### `npm test -- "name of test file" (i.e. users).`
+Prerequisites
 
-Run a single unit-test.
+Install Node.js (>=16.x)
 
+Install Docker (if using containerized setup)
 
-### `npm run lint`
+Install MySQL (if running outside Docker)
 
-Check for linting errors.
+Clone the Repository
 
+Install Dependencies
 
-### `npm run build`
+Environment Variables (.env)
 
-Build the project for production.
+Create a .env file in the root directory:
 
+Start MySQL Database
 
-### `npm start`
+If using Docker, run:
 
-Run the production build (Must be built first).
+Run Database Migrations
 
+Start the Application
 
-### `npm run type-check`
+API Endpoints
 
-Check for typescript errors.
+User Routes
 
+Method
 
-## Additional Notes
+Endpoint
 
-- If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`. 
+Description
+
+GET
+
+/items
+
+View items
+
+POST
+
+/orders
+
+Place order
+
+Admin Routes
+
+Method
+
+Endpoint
+
+Description
+
+POST
+
+/admin/items
+
+Add grocery item
+
+PUT
+
+/admin/items/:id
+
+Update item
+
+DELETE
+
+/admin/items/:id
+
+Delete item
+
+Running in Docker
+
+Testing
+
+Run unit tests using:
+
+Contributing
+
+Fork the repo
+
+Create a feature branch
+
+Commit your changes
+
+Push and open a Pull Request
+
+License
+
+MIT License
